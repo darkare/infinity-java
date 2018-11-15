@@ -1,0 +1,71 @@
+ 
+<!DOCTYPE html>
+<html lang=en xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title th:text="#{app.page.title}">Spring Security Example </title>
+          
+        <link th:href="@{webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet">
+        <link rel="stylesheet" href="/css/login-style.css"/>
+        <!-- 
+        <link rel="stylesheet" href="/bootstrap/4.1.1/css/bootstrap.min.css" />
+         -->
+    </head>
+    <body>
+ 
+    <div class="container">
+        <div class="login-form col-md-4 offset-md-4">
+            <!-- 
+            <h2 class="title">360 Coaching</h2>
+             -->
+            <h2 class="title">Infinity Coaching</h2>
+            
+            <form class="form-group" th:action="@{/login}" method="post">
+                <div class="form-group" >
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control" value="testone.gmail.com" autofocus >
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" value="password">
+                </div>
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}">
+                   You have been logged out.
+                </div>
+        
+                <div>
+                    <input type="submit" value="login" class="btn btn-primary btn-block btn-login">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 
+        
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form class="form-group" th:action="@{/login}" method="post">
+            <div>
+                  <label for="exampleInputEmail1"> Email</label>
+                  <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    				  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              
+            </div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+         -->
+       
+        <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+        
+    </body>
+</html>

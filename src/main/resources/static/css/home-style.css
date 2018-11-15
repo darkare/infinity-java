@@ -1,0 +1,55 @@
+body, html {
+	height: 100%;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-top:35px;
+}
+
+@media (max-width: 768px) {
+    #header {
+        text-align: center;
+    }
+}
+
+
+.navbar {
+	border-bottom: 1px solid #dedede;
+	
+}
+
+.navbar .navbar-nav .nav-link {
+	color: black;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+	color: grey;
+}
+
+.navbar-toggler-icon {
+	color: grey;
+}
+
+
+/* Header */
+#header {
+	/* background: url(../img/background.jpg) center center no-repeat;*/
+	background-size:cover;
+	height: 100%;
+	color: white;
+	display: flex;
+	align-items: start;
+}
+#header .header-left {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 30px;
+    border: 2px solid; 
+    border-radius: 10px;
+}
+
+#header .header-right {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 30px; 
+    border: 2px solid;
+    border-radius: 10px;
+}

@@ -1,0 +1,84 @@
+
+                
+				Highcharts.chart('container_graph_1', {
+				    chart: {
+				        type: 'bar'
+				    },
+				    title: {
+				        text: 'th:text=${currentSurvey.surveyName}' 'dfsdf'
+				    },
+				    subtitle: {
+				        text: 'Lee Williams as at 12 Feb 2018'
+				    },
+				    xAxis: {
+				        categories: ['Clarity', 'Self Awareness', 'Authenticity', 'System Awareness', 'Achieving','Controlling','Protecting','Complying'],
+				        title: {
+				            text: null
+				        }
+				    },
+				    yAxis: {
+				        min: 0,
+				        max: 100,
+				        title: {
+				            text: 'Score (%)',
+				            align: 'high'
+				        },
+				        labels: {
+				            overflow: 'justify'
+				        }
+				    },
+				    tooltip: {
+				        valueSuffix: ' %'
+				    },
+				    plotOptions: {
+				        bar: {
+				            dataLabels: {
+				                enabled: true
+				            }
+				        }
+				    },
+				    legend: {
+				        layout: 'vertical',
+				        align: 'right',
+				        verticalAlign: 'top',
+				        x: -40,
+				        y: 80,
+				        floating: true,
+				        borderWidth: 1,
+				        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				        shadow: true
+				    },
+				  
+				    credits: {
+				        enabled: false
+				    },
+				    exporting: {
+				        enabled: false
+				    },
+				    series: [
+				    	{
+				        name: 'Self',
+				        data: [45, 31, 30, 20, 12, 45, 10, 33],
+				        point: {
+				            events: {
+				                click: function () {
+				                	   drillSelf (this.category, this.y);
+				            
+				                }
+				            }
+				        }
+				    },
+				    {
+				        name: 'Other',
+				        data: [50, 45, 20, 40, 25, 79, 90, 100],
+				        point: {
+				            events: {
+				                click: function () {
+				                    alert('Category: ' + this.category + ', value: ' + this.y);
+				                }
+				            }
+				        }
+				    }
+				  
+				    ]
+				});
